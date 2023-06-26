@@ -1,0 +1,11 @@
+--- DFRobot_BMX160.h
++++ DFRobot_BMX160.h
+@@ -13,6 +13,8 @@
+ #include<Wire.h>
+ #include<SPI.h>
+ 
++#ifndef LITTLE_ENDIAN
+ #define LITTLE_ENDIAN 1
++#endif
+ 
+ /** Mask definitions */

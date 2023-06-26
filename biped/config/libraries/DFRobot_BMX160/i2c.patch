@@ -1,0 +1,17 @@
+--- DFRobot_BMX160.cpp
++++ DFRobot_BMX160.cpp
+@@ -248,13 +248,12 @@
+ {
+    _pWire->beginTransmission(_addr);
+    _pWire->write(reg);
+-    if(_pWire->endTransmission() != 0)
++    if(_pWire->endTransmission(false) != 0)
+         return;
+    _pWire->requestFrom(_addr, (uint8_t) len);
+     for(uint16_t i = 0; i < len; i ++) {
+         pBuf[i] =_pWire->read();
+     }
+-   _pWire->endTransmission();
+ }
+ 
+ bool DFRobot_BMX160::scan()
